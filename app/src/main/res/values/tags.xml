@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="key_auto_suggestion_item" type="id"/>
+
+    <item name="key_item" type="id"/>
+    <item name="key_item_click_type" type="id"/>
+</resources>

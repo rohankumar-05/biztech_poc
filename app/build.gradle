@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.rohan.biztech_poc"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+/**
+ * Define the library version since many use (and need to have) the same version.
+ * Versions defined here for easy updating.
+ */
+def android_support_version = "26.1.0"
+def retrofit_2_version = "2.1.0"
+def okhttp_version = "3.9.0"
+def disklrucache_version = "2.0.2"
+def glide_version = "3.7.0"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Retrofit 2 for networking
+    implementation "com.squareup.retrofit2:retrofit:${retrofit_2_version}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofit_2_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp_version}"
+    implementation "com.jakewharton:disklrucache:${disklrucache_version}"
+    implementation "com.github.bumptech.glide:glide:${glide_version}"
+    implementation 'com.android.support:cardview-v7:29.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+}
